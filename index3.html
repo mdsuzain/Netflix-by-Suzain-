@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflex - Watch Your Favorites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #141414;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease;
+        }
+
+        .logo {
+            color: #e50914;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #e50914;
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url('https://cdn.marvel.com/content/1x/arch_digital_keyart_teaser_v4_lg.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding-left: 80px;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .hero-content p {
+            margin: 15px 0 25px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .btn {
+            background-color: #e50914;
+            border: none;
+            padding: 12px 30px;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #f40612;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            padding: 60px 40px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .row {
+            display: flex;
+            overflow-x: auto;
+            gap: 18px;
+            scroll-behavior: smooth;
+            padding-bottom: 10px;
+        }
+
+        .row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
+            min-width: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+        }
+
+        footer {
+            background: #000;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px 20px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 70vh;
+                padding-left: 20px;
+                text-align: center;
+                background-position: top center;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                min-width: 130px;
+            }
+
+            .card img {
+                height: 200px;
+            }
+        }
+    </style>
+     <span><img width="53" src="logo.svg" alt=""></span>
+</head>
+
+<body>
+    <header>
+        <div class="logo" onclick="location.reload()">NETFLEX</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">TV Shows</a>
+            <a href="#">Movies</a>
+            <a href="second.html">My List</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Loki: Season 1</h1>
+            <p>Join the God of Mischief as he steps out of his brother’s shadow and into chaos across the multiverse.
+            </p>
+            <button class="btn" onclick="goToSecondPage()">▶ Play Now</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Trending Now</h2>
+        <div class="row">
+            <div class="card"><img src="https://m.media-amazon.com/images/I/51jkS1xHw8L.jpg" alt="Money Heist"></div>
+            <div class="card"><img
+                    src="https://m.media-amazon.com/images/M/MV5BZjkxZWJiNTUtYjQwYS00MTBlLTgwODQtM2FkNWMyMjMwOGZiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                    alt="Stranger Things"></div>
+            <div class="card"><img
+                    src="https://m.media-amazon.com/images/M/MV5BOWJjMGViY2UtNTAzNS00ZGFjLWFkNTMtMDBiMDMyZTM1NTY3XkEyXkFqcGc@._V1_.jpg"
+                    alt="Wednesday"></div>
+            <div class="card"><img
+                    src="https://m.media-amazon.com/images/M/MV5BNzQwOTcwMzIwN15BMl5BanBnXkFtZTgwMjYxMTA0NjE@._V1_.jpg"
+                    alt="Dark"></div>
+            <div class="card"><img
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQfitZ7dF69pJ_42yqYd46d-HRyhrJIYT-DGS95R05tfyzKlSLGiTyQ6oUTPPOkPgtMUa27Wrk3yWGwmgDnFNAWwQOXnsOzpWiltuCWeoPpIwQhg2S9kjl2Wi8HE0KQquyuoUqEsNAWMkHeBSSNLDAlup.jpg?r=77f"
+                    alt="All of Us Are Dead"></div>
+            <div class="card"><img
+                    src="https://m.media-amazon.com/images/M/MV5BMmMyNDVkZmUtZDdjYy00ZWY4LWI5YmQtYjQwYzNhNTlkNDY5XkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
+                    alt="The Witcher"></div>
+            <div class="card"><img
+                    src="https://images.ctfassets.net/4cd45et68cgf/6xlqqImDdAfzWKIlaScQxm/7def051f35d6668bd6e6227e354ecc01/EN-US_SG-S2_Primary_Main_RoundandRound-Safe_Vertical_27x40_RGB_PRE.jpg?w=1200"
+                    alt="Breaking Bad"></div>
+            <div class="card"><img
+                    src="https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQdttJvszpXZZDRBx6bLQprJt918HrS1MGOej3W88GrkfOeL-kUJn66TfXKYxd1B7r3ZDxo2Wlo-FjgzFUvSNrR9FRSrUq-aW0Jzip6mBrJvjEm7pVt72u_XErbyxZZ5RJNJpnOdy_3z2VabskP99G_ie.jpg?r=93e"
+                    alt="Peaky Blinders"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Netflex. Designed by Suzain. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function goToSecondPage() {
+            window.location.href = 'index2.html';
+        }
+    </script>
+</body>
+
+</html>
